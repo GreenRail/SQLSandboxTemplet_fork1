@@ -51,17 +51,17 @@ GO
 BEGIN TRANSACTION;
     INSERT INTO vendor VALUES ('AB','Adventure Base');
     INSERT INTO category VALUES ('BK', 'Biking');
-    -- Rollback or commit based on success or failure
-    -- ROLLBACK TRANSACTION;
-    -- COMMIT TRANSACTION;
+     Rollback or commit based on success or failure
+     ROLLBACK TRANSACTION;
+     COMMIT TRANSACTION;
 GO
 
 /* 12. Demonstrate DELETE CASCADE by setting up foreign key (Example setup) */
--- ALTER TABLE product ADD CONSTRAINT fk_product_vendor CASCADE ON DELETE;
+ ALTER TABLE product ADD CONSTRAINT fk_product_vendor CASCADE ON DELETE;
 GO
 
 /* 13. DELETE a vendor and see cascading delete in 'product' (Should see related products deleted) */
--- DELETE FROM vendor WHERE vendorid = 'AB';
+ DELETE FROM vendor WHERE vendorid = 'AB';
 GO
 
 /* 14. Use a subquery to update 'productprice' based on 'categoryid' */
@@ -146,16 +146,16 @@ WHERE tid = 'T111';
 GO
 
 /* 28. Demonstrate deleting a 'category' without affecting 'product' directly (Requires previous setup) */
--- DELETE FROM category WHERE categoryid = 'BK';
+ DELETE FROM category WHERE categoryid = 'BK';
 GO
 
 /* 29. Show how to use a CTE for hierarchical data querying (Example setup) */
--- WITH RecursiveCTE AS (SELECT ... -- Example placeholder)
--- SELECT * FROM RecursiveCTE;
+ WITH RecursiveCTE AS (SELECT ... -- Example placeholder)
+ SELECT * FROM RecursiveCTE;
 GO
 
 /* 30. Demonstrate dynamic SQL to select from 'vendor' (For advanced users) */
--- EXEC sp_executesql N'SELECT * FROM vendor WHERE vendorname LIKE @name', N'@name NVARCHAR(25)', @name = N'P%';
+ EXEC sp_executesql N'SELECT * FROM vendor WHERE vendorname LIKE @name', N'@name NVARCHAR(25)', @name = N'P%';
 GO
 
 

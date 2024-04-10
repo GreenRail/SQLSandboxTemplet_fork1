@@ -6,7 +6,7 @@ INSERT INTO product VALUES ('7X7','Trail Mix', 10, 'PG', 'CP');
 GO
 
 /* 2. Attempt to insert into 'product' with invalid 'vendorid' (Should fail) */
--- INSERT INTO product VALUES ('8X8','Dream Coat', 200, 'ZZ', 'FW');
+ INSERT INTO product VALUES ('8X8','Dream Coat', 200, 'ZZ', 'FW');
 GO
 
 /* 3. Add CHECK constraint to 'product' for 'productprice' to be between 10 and 500 */
@@ -15,7 +15,7 @@ ADD CONSTRAINT chk_ProductPrice CHECK (productprice BETWEEN 10 AND 500);
 GO
 
 /* 4. Validate CHECK constraint - Try to insert a product with a price of 5 (Should fail) */
--- INSERT INTO product VALUES ('9X9','Magic Wand', 5, 'PG', 'CP');
+ INSERT INTO product VALUES ('9X9','Magic Wand', 5, 'PG', 'CP');
 GO
 
 /* 5. Create an INDEX on 'vendorname' in 'vendor' table */
